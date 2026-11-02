@@ -15,7 +15,7 @@ while (true)
     switch (Console.ReadLine()?.Trim().ToUpperInvariant())
     {
         case "0": new Lab_8.Legacy.LegacyLogisticsProcessor().ProcessShipmentConsole(); break;
-        // ТУТ ДОДАВАТИМУТЬСЯ case
+        case "1": CompositionRoot.CreateUi().Run(); break;
         case "Q": return;
         default: Console.WriteLine("Невірний вибір"); break;
     }
