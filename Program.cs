@@ -16,6 +16,7 @@ while (true)
     {
         case "0": new Lab_8.Legacy.LegacyLogisticsProcessor().ProcessShipmentConsole(); break;
         case "1": CompositionRoot.CreateUi().Run(); break;
+        case "2": PolymorphismDemo.Run(); break;
         case "Q": return;
         default: Console.WriteLine("Невірний вибір"); break;
     }
