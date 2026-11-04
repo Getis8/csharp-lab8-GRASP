@@ -7,7 +7,15 @@ public static class CompositionRoot
             new ShipmentController(
                 new InMemoryShipmentRepository(),
                 new ConsoleTrackingNotifier(),
-                new SingleTariffResolver()),
+                CreateTariffResolver()),
             new ConsoleCommandParser(),
             new WaybillFormatter());
+
+    public static ITariffPolicyResolver CreateTariffResolver() =>
+        new DictionaryTariffResolver(new ITariffPolicy[]
+        {
+            new StandardTariffPolicy(),
+            new ExpressTariffPolicy(),
+            new FreightTariffPolicy()
+        });
 }
